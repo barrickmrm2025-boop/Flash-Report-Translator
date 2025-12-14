@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Barrick Flash Report Translator in Urdu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              urdu: ['"Jameel Noori Nastaleeq"', '"Jameel Noorani Nastaleeq"', '"Noto Nastaliq Urdu"', 'serif'],
+            },
+            colors: {
+              barrick: {
+                blue: '#005480',
+                yellow: '#FFC72C',
+                red: '#D71920',
+                header: '#006F91'
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Load Jameel Noori Nastaleeq from CDN */
+      @font-face {
+        font-family: 'Jameel Noori Nastaleeq';
+        src: url('https://cdn.jsdelivr.net/gh/lateefsagar/Urdu-Fonts@master/Jameel%20Noori%20Nastaleeq.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Custom print styles to ensure background colors print correctly */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+          background-color: white;
+        }
+        .no-print {
+          display: none !important;
+        }
+        /* Hide all content by default to clean up the print view */
+        body > * {
+          display: none;
+        }
+        /* Reveal the root */
+        body > #root {
+          display: block;
+        }
+        /* Ensure the poster itself is visible and positioned correctly */
+        .print-page {
+          display: block !important;
+          visibility: visible;
+          position: relative;
+          width: 210mm !important;
+          min-height: 297mm !important;
+          margin: 0 auto !important;
+          padding: 0 !important;
+          box-shadow: none !important;
+          border: none !important;
+          z-index: 9999;
+          break-inside: avoid;
+        }
+      }
+      .urdu-text {
+        direction: rtl;
+        font-family: 'Jameel Noori Nastaleeq', 'Jameel Noorani Nastaleeq', 'Noto Nastaliq Urdu', serif;
+        line-height: 2.2; /* Nastaliq needs height */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "html2canvas": "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.esm.js"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100">
+    <div id="root"></div>
+  </body>
+</html>
